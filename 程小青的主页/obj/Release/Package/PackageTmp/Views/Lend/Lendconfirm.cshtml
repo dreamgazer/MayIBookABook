@@ -1,0 +1,75 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Mayibookabook.Models.book
+
+@{
+    ViewBag.Title = "出借确认";
+}
+
+<h2>出借确认</h2>
+@{Html.BeginForm("Lended", "Lend", FormMethod.Get, new { @class = "form-horizontal", role = "form" });}
+
+@Html.AntiForgeryToken()
+
+<h3>书籍信息是否如下？</h3>
+<div>
+    <h4>book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.press)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.press)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lenderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lenderID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lendername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lendername)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lendercontact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lendercontact)
+        </dd>
+
+    </dl>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="确认" class="btn btn-default" /> |
+            @Html.ActionLink("重新编辑","Index")
+        </div>
+
+        @{Html.EndForm();}
+    </div>

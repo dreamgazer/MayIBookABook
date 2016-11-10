@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "管理界面主页";
+}
+<h2>@ViewBag.Title</h2>
+@{Html.BeginForm("Index", "newbookmanage", FormMethod.Get, new { @class = "form-horizontal", role = "form" });}
+<hr />
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-6">
+        <input type="submit" class="btn btn-default" value="借出登记审核" />
+    </div>
+</div>
+<hr />
+@{Html.EndForm();}
+@{Html.BeginForm("Index", "borrowedmanage", FormMethod.Get, new { @class = "form-horizontal", role = "form" });}
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-6">
+        <input type="submit" class="btn btn-default" value="已借出书籍管理" />
+    </div>
+</div>
+<hr />
+@{Html.EndForm();}
+@{Html.BeginForm("Index", "bookmanage", FormMethod.Get);}
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-6">
+        <input type="submit" class="btn btn-default" value="在借书籍管理" />
+    </div>
+</div>
+@{Html.EndForm();}

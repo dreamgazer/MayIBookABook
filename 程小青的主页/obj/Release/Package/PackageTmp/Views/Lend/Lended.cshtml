@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Mayibookabook.Models.book
+
+@{
+    ViewBag.Title = "登记成功";
+}
+
+<h2>登记成功！</h2>
+
+<div>
+    <h4>您登记的书籍信息将在经过青协确认以后出现在出借列表里，感谢您对借书者的帮助！</h4>
+    <hr />
+
+    @{Html.BeginForm("Index", "Lend", FormMethod.Get, new { @class = "form-horizontal", role = "form" });}
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="继续登记" class="btn btn-default" /> |
+        @Html.ActionLink("返回主页", "Index", "Home")
+    </div>
+
+    @{Html.EndForm();}
+</div>

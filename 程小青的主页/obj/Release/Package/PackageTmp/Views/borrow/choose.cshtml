@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Mayibookabook.Models.book
+
+@{
+    ViewBag.Title = "选择";
+}
+
+<h2>选择</h2>
+
+<font color="#F00"><h4>注意：请您现在务必记下出借者的联系方式并立即与其联系,确认选择以后此条书目将不再显示在可借列表中！</h4></font>
+<div>
+    <h4>书目</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.press)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.press)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lendername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lendername)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lendercontact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lendercontact)
+        </dd>
+
+    </dl>
+
+   @using (Html.BeginForm())
+   {
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="我已记下出借者联系方式" class="btn btn-default" /> |
+        @Html.ActionLink("返回列表", "Index")
+    </div>
+   }
+</div>

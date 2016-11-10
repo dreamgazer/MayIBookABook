@@ -1,0 +1,97 @@
+﻿@model Mayibookabook.Models.book
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>删除</h2>
+
+<h3>确认删除此书目吗？</h3>
+<div>
+    <h4>书目</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.press)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.press)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.borrowerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.borrowerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.borrowercontact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.borrowercontact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.borrowername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.borrowername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lenderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lenderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lendercontact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lendercontact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lendername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lendername)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("返回列表", "Index")
+        </div>
+    }
+</div>

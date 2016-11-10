@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "May I Book A Book 主页";
+}
+<h2>@ViewBag.Title</h2>
+@{Html.BeginForm("Index", "borrow", FormMethod.Get, new { @class = "form-horizontal", role = "form" });}
+<hr />
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-5">
+        <input type="submit" class="btn btn-default" value="我要借书" />
+    </div>
+</div>
+<hr />
+@{Html.EndForm();}
+
+@{Html.BeginForm("Index", "Lend", FormMethod.Get, new { @class = "form-horizontal", role = "form" });}
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-5">
+        <input type="submit" class="btn btn-default" value="登记出借" />
+    </div>
+</div>
+@{Html.EndForm();}
